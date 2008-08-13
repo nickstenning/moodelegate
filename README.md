@@ -5,9 +5,9 @@ A simple library for event delegation using the
 (MooTools)[http://mootools.net] JavaScript library. At it's simplest, 
 delegator.js implements a #delegate method on Element, so you can call:
 
-$('myelement').delegate('li.delete', 'click', function () {
-    this.dispose();
-});
+    $('myelement').delegate('li.delete', 'click', function () {
+        this.dispose();
+    });
 
 This would make sure that any child of 'myelement' that was a list item with 
 the class "delete" would be removed from the DOM when it was clicked. This 
