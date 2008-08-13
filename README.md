@@ -2,7 +2,7 @@ MooDelegate
 ===========
 
 A simple library for event delegation using the 
-(MooTools)[http://mootools.net] JavaScript library. At it's simplest, 
+[MooTools](http://mootools.net) JavaScript library. At its simplest, 
 delegator.js implements a #delegate method on Element, so you can call:
 
     $('myelement').delegate('li.delete', 'click', function () {
@@ -21,8 +21,8 @@ HTML:
 
     <div id="textsizeController">
       <span>Hello</span>
-      <button id="bigger">Bigger</button>
-      <button id="smaller">Smaller</button>
+      <a href="#" id="bigger">Bigger</a>
+      <a href="#" id="smaller">Smaller</a>
     </div>
 
 JS:
