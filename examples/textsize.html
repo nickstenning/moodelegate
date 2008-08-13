@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>TextSize Controller Demo</title>
+    <script src="../vendor/mootools-1.2-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/delegator.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/controller.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+    
+      var TextSizeController = new Class({
+        Extends: Controller,
+        span: function () {          
+          return this.element.getElement('span');
+        },
+        adjustSize: function (change) {
+          this.span().setStyle('font-size', 
+                                this.span().getStyle('font-size').toInt() + change);
+        },
+        increaseSize: function () {
+          this.adjustSize(1);
+        },
+        decreaseSize: function () {
+          this.adjustSize(-1);
+        },
+        
+        controls: {
+            '#bigger click': function () {
+              this.increaseSize();
+            },
+            '#smaller click': function () {
+              this.decreaseSize();
+            }
+        }
+        
+      });
+    
+      window.addEvent('domready', function () {
+        new TextSizeController($('textsizeController'));
+      });
+    </script>
+  </head>
+  <body>
+    
+    <div id="textsizeController">
+      <p>
+        <span>Hello</span>
+      </p>
+      <p>
+        <button id="bigger">Bigger</button>
+        <button id="smaller">Smaller</button>
+      </p>
+    </div>
+    
+  </body>
+</html>
